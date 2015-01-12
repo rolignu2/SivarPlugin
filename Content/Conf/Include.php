@@ -93,4 +93,14 @@ require 'Class/Http/Class.Header.php';
 require 'Class/Pdf/Class-Fpdf.php';
 require 'Class/Pdf/exportPDF.class.php';
 
+
+/**
+ * E-COMMERCE CLASS 
+ */
+
+//require 'Class/Ecommerce/GoPaypal.class.php';
+require 'Class/Ecommerce/ccvalidator.class.php';
+
+
+
 ?>
