@@ -14,17 +14,19 @@ and open the template in the editor.
 
                 include  '/Conf/Include.php';
                 
+                $pdf_ = new \PDF\PdfToImage("example.pdf");
                 
-                $curl_access = new SivarApi\Tools\Curl\Curl_class();
                 
-                $oci = new db_oci8();
+                //$curl_access = new SivarApi\Tools\Curl\Curl_class();
+                
+                //$oci = new db_oci8();
 
                
                // $conn = new MysqlConection();
                // $paginacion = new BasePaginacion();
                 
-                $sqlite = new SQLite3Database();
-                $sqlite->connect();
+               // $sqlite = new SQLite3Database();
+              //  $sqlite->connect();
               
               /*  $sqlite->insert("user", array(
                     "user_name"=> "user" .rand(0, 100),
@@ -32,7 +34,7 @@ and open the template in the editor.
                      "state"=>1
                     ));*/
                         
-                print_r($sqlite->get_rows("select * from user" , true));   
+               // print_r($sqlite->get_rows("select * from user" , true));   
                 
  
                 //$values = $conn->GetformatQuery("select * from datos" );

@@ -16,6 +16,7 @@ $SERVER_DIR = getcwd();
 $ARRAY_DIR = explode("\\", $SERVER_DIR);
 $DIR_NAME = $ARRAY_DIR[count($ARRAY_DIR)-1];
 
+
 $CONFIG_ = array(
     
     "DB_MYSQL" =>[

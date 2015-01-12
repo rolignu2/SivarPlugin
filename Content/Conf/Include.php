@@ -80,4 +80,9 @@ require 'Class/Mail/PHPMailerAutoload.php';
 /*LLAMADA DE LA CLASE HEADER **/
 require 'Class/Http/Class.Header.php';
 
+
+/** API PDF */
+
+require 'Class/Pdf/Class-PdfToImage.php';
+
 ?>
