@@ -1,5 +1,4 @@
-  /**
-     * 
+  /* * 
      * @name SIVAR PLUGIN 
      * @version 1.2
      * @author Rolando Arriaza <Rolignu90@gmail.com>
@@ -19,8 +18,10 @@
      *       ->SE AGREGO LA CLASE PARA MANEJO DE SQLITE
      *       ->SE AGREGO LA CLASE HEADER EN MANIPULACION DE TIPO HTTP
      *       ->SE AGREGO LA CLASE PHPMAIL CON CAPACIDAD DE ENVIO SMTP Y POP3
-     *       ->SE AGREGO LA CLASE VIEWLOADER PARA MANEJO DE PLANTILLAS HTML O PHP 
-     *       ->SE AGREGO LA CLASE IMAGERENDER PARA MANEJO DE ENTRADA Y SALIDA DE IMAGENES EN FORMATO JPG , PNG Y GIF
+     *       ->SE AGREGO LA CLASE VIEWLOADER PARA 
+                    MANEJO DE PLANTILLAS HTML O PHP 
+     *       ->SE AGREGO LA CLASE IMAGERENDER PARA MANEJO DE ENTRADA Y SALIDA 
+                DE IMAGENES EN FORMATO JPG , PNG Y GIF
      *       ->SE AGREGO UN CONTROLADOR PARA EL USO DE CAPTCHA
      * 
      * ******************************************************************
@@ -59,4 +60,4 @@
      //NOMBRE DEL ARCHIVO EN LA CUAL INICIARA , GENERALMENTE ES UN INDEX.PHP    
      header("Location: /$DIR_NAME/Content/index.php" );  
 
-     ****************************************************************************************************************
+     ***************************************************************************
