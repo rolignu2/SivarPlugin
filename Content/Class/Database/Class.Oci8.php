@@ -36,6 +36,91 @@
 /**
  * DEBUG: No Debug Info
  */
+
+/**
+ * Enter the name of your application here.
+ * Used when printing out error messages and also used to register this name
+ * to Oracle when DB_REGISTER is set to 1.
+ * @see DB_REGISTER
+ */
+define('OCIAPPNAME', 'OCI8-CLASS');
+
+/**
+ * Set the following define to 0 if you do not want auto-register of OCIAPPNAME.
+ * @see OCIAPPNAME
+ */
+define('DB_REGISTER',1);
+
+/**
+ * Grouping character autoset.
+ * Set the following define to 0 if you do not want to auto-set the decimal
+ * and grouping characters (see below).
+ * @see DB_NUM_DECIMAL
+ * @see DB_NUM_GROUPING
+ */
+define('DB_SET_NUMERIC', 1);
+
+/**#@+
+ * Define here what you are using as grouping character and decimal character.
+ * Germans usually use DECIMAL=, | GROUPING =. in opposite of english/american
+ * which seems to be using DECIMAL=. | GROUPING=, and if you are using something
+ * completly different, please drop me a short mail and tell me what you use, I
+ * always love to learn :)
+ */
+define('DB_NUM_DECIMAL'   ,'.');
+define('DB_NUM_GROUPING'  ,',');
+/**#@-*/
+
+
+/**
+ * You may set a default prefetch value with this define.
+ * This is a simple solution to have a higher prefetch value defined
+ * as default for all your queries instead of calling setPrefetch()
+ * everytime.
+ * @since V1.00
+ */
+define('DB_DEFAULT_PREFETCH', 10);
+
+/**
+ * Set address to be shown in case of an error.
+ * If this is not set the default address of $_SERVER['SERVER_ADMIN'] is used.
+ * @since V1.00
+ */
+define('OCIDB_ADMINEMAIL' , "php@saschapfalz.de");
+
+/**
+ * Set this define to 1 if you want auto-emails to be sent whenever an error occures.
+ * Default is 0 (disabled)
+ * @since V1.00
+ */
+define('OCIDB_SENTMAILONERROR', 0);
+
+/**
+ * Set this define to 1 if you want to use persistant connections as default connection.
+ * Default is 0, which means that OCIlogon is used instead. (new connections).
+ * @since V1.00
+ */
+define('OCIDB_USE_PCONNECT', 1);
+
+/**
+ * Set amount of retries in case of a connection failure.
+ * Whenever the connection fails and you have defined a value which is greater
+ * than 1 the class sleeps for two seconds and retry connection attempt.
+ * If you do not define any value here the class uses the default of
+ * 1 connection attempt without any sleep, this is the behavour in all previous versions.
+ * @since V1.00
+ */
+define('OCIDB_CONNECT_RETRIES', 5);
+
+/**
+ * Setup a default characterset to be used during the connection (Only for Oracle >= 9.2 and PHP 5.1.2+).
+ * If this define is not set the NLS_LANG environment variable value is used.
+ * You can also override this when using the connect() method.
+ * @since V1.00
+ */
+define('OCIDB_CHARSET'  , 'UTF8');
+
+
 if(!defined('DBOF_DEBUGOFF'))
   {
   define('DBOF_DEBUGOFF'    , (1 << 0));
@@ -86,14 +171,21 @@ if(!defined('DBOF_CACHE_STATEMENT'))
  * sensible informations in a productive environment.
  * Set RETURN_ALL_ERRORS if you want to handle errors yourself.
  */
-if(!defined('DBOF_SHOW_NO_ERRORS'))
-  {
-  define('DBOF_SHOW_NO_ERRORS'    , 0);
-  define('DBOF_SHOW_ALL_ERRORS'   , 1);
-  define('DBOF_RETURN_ALL_ERRORS' , 2);
-  }
+
+ define('DBOF_SHOW_NO_ERRORS'    , 0);
+ define('DBOF_SHOW_ALL_ERRORS'   , 1);
+ define('DBOF_RETURN_ALL_ERRORS' , 2);
+  
 /**#@-*/
 
+ /**
+ * Modify default error handling mode if you wish.
+ * Default is db_oci8::DBOF_SHOW_NO_ERRORS if you omit this parameter.
+ * @since V1.00
+ */
+define('DB_ERRORMODE', DBOF_SHOW_ALL_ERRORS);
+
+ 
 /**
  * OCI8 Database Class.
  * @package db_oci8
@@ -164,25 +256,19 @@ class db_oci8
    * Since V0.72 you may optionally give an alternate file as configuration file. If no file is
    * given inside the constructor the class still uses the file "dbdefs.inc.php" as default
    * configuration file.
-   * @param string $extconfig Full path to dbdefs.inc.php, if empty class searches in current dir for dbdefs.inc.php
-   * @see dbdefs.inc.php
+   * @see OciDef
    */
-  function db_oci8($extconfig='')
+  function db_oci8()
     {
-    if($extconfig == '')
-      {
-      include_once('dbdefs.inc.php');
-      }
-    else
-      {
-      include($extconfig);
-      }
+
+    include "/Conf/Config.php";  
+      
     $this->classversion   = '0.79';                   // Version of our class
-    $this->host           = '';                       // TNS Name of DB to connect to
-    $this->user           = '';                       // Username
-    $this->pass           = '';                       // Password
+    $this->host           = $CONFIG_["DB_ORACLE"]["host"];                       // TNS Name of DB to connect to
+    $this->user           = $CONFIG_["DB_ORACLE"]["user"];                       // Username
+    $this->pass           = $CONFIG_["DB_ORACLE"]["password"];                       // Password
     $this->appname        = OCIAPPNAME;               // Name of our Application
-    $this->database       = '';                       // Oracle does not use this
+    $this->database       = $CONFIG_["DB_ORACLE"]["database"];                      // Oracle does not use this
     $this->sock           = 0;                        // Internal database handle
     $this->querycounter   = 0;                        // How many queries where executed
     $this->querytime      = 0.000;                    // Time required for all queries
@@ -201,32 +287,11 @@ class db_oci8
     $this->output_hash    = array();                  // Set to empty array in initial call
     $this->usePConnect    = FALSE;                    // Set to TRUE to use Persistant connections
     $this->connectRetries = 1;                        // How many retries we should perform when connecting to Oracle.
+    $this->AdminEmail = "";
+    $this->usePConnect = TRUE;
+    $this->connectRetries = OCIDB_CONNECT_RETRIES;
 
-    if(!defined('OCIAPPNAME'))
-      {
-      $this->setErrorHandling(DBOF_SHOW_ALL_ERRORS);
-      $this->Print_Error('dbdefs.inc.php is wrong configured! Please check Class installation!');
-      }
-    if(defined('DB_ERRORMODE'))                     // You can set a default behavour for error handling in dbdefs.inc.php
-      {
-      $this->setErrorHandling(DB_ERRORMODE);
-      }
-    else
-      {
-      $this->setErrorHandling(DBOF_SHOW_NO_ERRORS); // Default is not to show too much informations
-      }
-    if(defined('OCIDB_ADMINEMAIL'))
-      {
-      $this->AdminEmail = OCIDB_ADMINEMAIL;         // If set use this address instead of default webmaster
-      }
-    if(defined('OCIDB_USE_PCONNECT') && OCIDB_USE_PCONNECT != 0)
-      {
-      $this->usePConnect = TRUE;
-      }
-    if(defined('OCIDB_CONNECT_RETRIES') && OCIDB_CONNECT_RETRIES > 1)
-      {
-      $this->connectRetries = OCIDB_CONNECT_RETRIES;
-      }
+    
     }
 
   /**
@@ -247,7 +312,7 @@ class db_oci8
    * @see oci_logon
    * @see oci_plogon
    */
-  function Connect($user=NULL,$pass=NULL,$host=NULL,$exit_on_error = 1, $use_charset = '', $session_mode = -1)
+  function Connect($exit_on_error = 1, $use_charset = '', $session_mode = -1)
     {
     $connquery = '';
     $connretry = 0;
@@ -255,31 +320,8 @@ class db_oci8
     if($this->sock)
       {
       return($this->sock);
-      }
-    if(isset($user) && $user!=NULL)
-      {
-      $this->user = $user;
-      }
-    else
-      {
-      $this->user = OCIDB_USER;
-      }
-    if(isset($pass) && $pass!=NULL)
-      {
-      $this->pass = $pass;
-      }
-    else
-      {
-      $this->pass = OCIDB_PASS;
-      }
-    if(isset($host) && $host!=NULL)
-      {
-      $this->host = $host;
-      }
-    else
-      {
-      $this->host = OCIDB_HOST;
-      }
+     }
+     
     if(version_compare(phpversion(), '5.1.2', '<'))
       {
       $php512 = FALSE;

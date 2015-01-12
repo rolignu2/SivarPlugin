@@ -16,6 +16,8 @@ and open the template in the editor.
                 
                 
                 $curl_access = new SivarApi\Tools\Curl\Curl_class();
+                
+                $oci = new db_oci8();
 
                
                // $conn = new MysqlConection();

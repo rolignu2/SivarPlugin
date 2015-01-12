@@ -39,12 +39,10 @@ $CONFIG_ = array(
     
     
     "DB_ORACLE" => [
-        
-    ],
-    
-    
-    "DB_MONGO" => [
-        
+        "host"=>"localhost",
+        "user"=>"",
+        "password"=>"",
+        "database"=>""
     ],
     
     "DIR" =>[

@@ -26,7 +26,7 @@ $GLOBAL_DIRECTORY = $CONFIG_["DIR"]["directory"];
 include 'Class/Database/Class.Mysql.php';
 include 'Class/Database/Class.Sqlite.php';
 include 'Class/Database/Class.Oci8.php';
-include 'Class/Database/Oci8Def.php';
+
 
 /**
  * LLAMADA DE LAS CLASES DIRECTORY
