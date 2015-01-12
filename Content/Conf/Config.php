@@ -37,6 +37,16 @@ $CONFIG_ = array(
         "dir"=> "$SERVER_DIR/Class/Database/sqlitedb/example.db"
     ],
     
+    
+    "DB_ORACLE" => [
+        
+    ],
+    
+    
+    "DB_MONGO" => [
+        
+    ],
+    
     "DIR" =>[
         "root"=> $_SERVER['DOCUMENT_ROOT'],
         "directory"=> $DIR_NAME,

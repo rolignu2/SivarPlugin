@@ -5,7 +5,6 @@
      * @copyright (c) 2015, ROLIGNU
      * @since 1.0
      * 
-     * ******************************************************************
      * SIVAR PLUGIN SON UN CONJUNTO DE SCRIPTS EN LA CUAL HACE MAS FACIL
      * LA VIDA DEL PROGRAMADOR SIN NECESIDAD DE TENER QUE REINVENTAR LA RUEDA
      * O USAR ALGUN FRAMEWORK EN LA CUAL EL PROYECTO SE HACE PESADO
@@ -19,12 +18,11 @@
      *       ->SE AGREGO LA CLASE HEADER EN MANIPULACION DE TIPO HTTP
      *       ->SE AGREGO LA CLASE PHPMAIL CON CAPACIDAD DE ENVIO SMTP Y POP3
      *       ->SE AGREGO LA CLASE VIEWLOADER PARA 
-                    MANEJO DE PLANTILLAS HTML O PHP 
+     *               MANEJO DE PLANTILLAS HTML O PHP 
      *       ->SE AGREGO LA CLASE IMAGERENDER PARA MANEJO DE ENTRADA Y SALIDA 
-                DE IMAGENES EN FORMATO JPG , PNG Y GIF
+     *           DE IMAGENES EN FORMATO JPG , PNG Y GIF
      *       ->SE AGREGO UN CONTROLADOR PARA EL USO DE CAPTCHA
      * 
-     * ******************************************************************
      */
 
 
