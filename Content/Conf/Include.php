@@ -50,17 +50,32 @@ require 'Class/Tools/Captcha.php';
 require 'Class/Pagination/Class.Paginacion.php';
 require 'Class/Pagination/Class.BasePaginacion.php';
 
+
+/**
+ * LLAMADA DE DISTINTAS CLASES
+ * CADA CLASE ES INDEPENDIENTE DE LA OTRA
+ */
+
 require 'Class/Tools/Encriptacion.php';
 require 'Class/Tools/Validation.php';
 require 'Class/Tools/GoogleTranslate.php';
 require 'Class/Tools/CurlAccess.php';
 require 'Class/Tools/JsonClass.php';
 
+/**
+ * LLAMADA DE LAS CLASES EN EL DIRECTORIO VIEW 
+ * 
+ */
+
 require 'Class/View/ViewLoader.php';
 require 'Class/View/ImageRender.php';
 
+
+/* CLASE PHP MAIL , HEREDA CLASES EXTERNAS DENTRO DEL DIRECTORIO Mail**/
+
 require 'Class/Mail/PHPMailerAutoload.php';
 
+/*LLAMADA DE LA CLASE HEADER **/
 require 'Class/Http/Class.Header.php';
 
 ?>
