@@ -43,6 +43,10 @@ require 'Class/Tools/BaseCaptcha.php';
 require 'Class/Tools/Captcha.php';
 
 
+/**
+ * LLAMADA DE PAGINACION
+ * basepaginacion.php depende de paginacion.php
+ */
 require 'Class/Pagination/Class.Paginacion.php';
 require 'Class/Pagination/Class.BasePaginacion.php';
 
