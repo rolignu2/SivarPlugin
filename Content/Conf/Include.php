@@ -83,6 +83,14 @@ require 'Class/Http/Class.Header.php';
 
 /** API PDF */
 
-require 'Class/Pdf/Class-PdfToImage.php';
+/**
+ * SE DEBE DE INSTALAR PHP_IMAGIC.DLL COMO EXTENSION
+ * PARA EL USO DE ESTA CLASE
+ */
+
+//require 'Class/Pdf/Class-PdfToImage.php';
+
+require 'Class/Pdf/Class-Fpdf.php';
+require 'Class/Pdf/exportPDF.class.php';
 
 ?>

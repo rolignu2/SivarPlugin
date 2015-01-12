@@ -14,7 +14,7 @@ and open the template in the editor.
 
                 include  '/Conf/Include.php';
                 
-                $pdf_ = new \PDF\PdfToImage("example.pdf");
+               
                 
                 
                 //$curl_access = new SivarApi\Tools\Curl\Curl_class();
