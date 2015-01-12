@@ -23,6 +23,7 @@
      ->SE AGREGO UN CONTROLADOR PARA EL USO DE CAPTCHA
     
 
+     <b>Prueba</b>
 
 
      /**
