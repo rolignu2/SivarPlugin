@@ -60,7 +60,7 @@ class Json_class {
               RETURN $this->jason_class;
           }
      }
-     
+      
      /**
       * @version 1.1
       * @todo Guarda un archivo en formato json 
