@@ -64,6 +64,7 @@ require 'Class/Tools/Validation.php';
 require 'Class/Tools/GoogleTranslate.php';
 require 'Class/Tools/CurlAccess.php';
 require 'Class/Tools/JsonClass.php';
+require 'Class/Tools/JSON.php';
 
 /**
  * LLAMADA DE LAS CLASES EN EL DIRECTORIO VIEW 

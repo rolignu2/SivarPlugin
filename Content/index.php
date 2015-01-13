@@ -14,7 +14,10 @@ and open the template in the editor.
 
                 include  '/Conf/Include.php';
                 
-             
+                $jason = new \SivarApi\Tools\Services_JSON();
+                $arr = array("nombre"=>"roli");
+                echo $jason->encode($arr);
+               
                
               /*  $public = "6LcHKeMSAAAAAOT44ko9ABNagbFST3RAMrinllIg";
                 $private = "6LcHKeMSAAAAAOAoANaejOfQyUw5UyTpGbaeB7YX";
