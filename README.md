@@ -1,4 +1,6 @@
-  
+# SIVAR-PLUGIN 
+ 
+      
       @name SIVAR PLUGIN 
       @version 1.2
       @author Rolando Arriaza <Rolignu90@gmail.com>
@@ -23,7 +25,7 @@
      ->SE AGREGO UN CONTROLADOR PARA EL USO DE CAPTCHA
     
 
- 
+
 
 
      /**
