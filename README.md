@@ -1,5 +1,5 @@
-  
-      # Proyecto Codename SIVAR-PLUGIN 
+# SIVAR-PLUGIN 
+ 
       
       @name SIVAR PLUGIN 
       @version 1.2
@@ -25,7 +25,7 @@
      ->SE AGREGO UN CONTROLADOR PARA EL USO DE CAPTCHA
     
 
- 
+
 
 
      /**
