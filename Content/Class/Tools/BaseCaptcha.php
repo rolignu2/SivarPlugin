@@ -40,14 +40,18 @@ class BaseCaptcha {
     /**
      * @todo Contructor de la clase
      * @version 1.0
-     * @param String $public_key llave publica para el captcha ej: 125445sivar_api
-     * @param String $private_key llave privada para el captcha ej:45565ss_api
+     * @param String $public_key llave publica para el captcha 6LcHKeMSAAAAAOT44ko9ABNagbFST3RAMrinllIg
+     * @param String $private_key llave privada para el captcha 6LcHKeMSAAAAAOT44ko9ABNagbFST3RAMrinllIg
      * 
      * <code>
      *  para crear una llave privada y publica acceder a este link
-     *  <a>https://www.google.com/recaptcha/admin/create</a>
+     *  https://www.google.com/recaptcha/admin/
+     * 
+     * En esa direccion puedes crear una llave unica basadae en tu pagina web 
+     * o usa la llaves siguientes
      * 
      *  public = 6LcHKeMSAAAAAOT44ko9ABNagbFST3RAMrinllIg
+     * 
      *  private = 6LcHKeMSAAAAAOAoANaejOfQyUw5UyTpGbaeB7YX
      * </code>
      * 
