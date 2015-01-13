@@ -14,6 +14,8 @@ and open the template in the editor.
 
                 include  '/Conf/Include.php';
                 
+             
+               
               /*  $public = "6LcHKeMSAAAAAOT44ko9ABNagbFST3RAMrinllIg";
                 $private = "6LcHKeMSAAAAAOAoANaejOfQyUw5UyTpGbaeB7YX";
                 $captcha = new SivarApi\Tools\Captcha\BaseCaptcha\BaseCaptcha($public , $private);
