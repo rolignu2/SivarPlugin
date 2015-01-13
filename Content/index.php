@@ -14,42 +14,26 @@ and open the template in the editor.
 
                 include  '/Conf/Include.php';
                 
-               
-                
+              /*  $public = "6LcHKeMSAAAAAOT44ko9ABNagbFST3RAMrinllIg";
+                $private = "6LcHKeMSAAAAAOAoANaejOfQyUw5UyTpGbaeB7YX";
+                $captcha = new SivarApi\Tools\Captcha\BaseCaptcha\BaseCaptcha($public , $private);
+                echo $captcha->CreateCaptcha();
+               */
                 
                 //$curl_access = new SivarApi\Tools\Curl\Curl_class();
                 
                 //$oci = new db_oci8();
 
                
-               // $conn = new MysqlConection();
+               
+                
                // $paginacion = new BasePaginacion();
                 
-               // $sqlite = new SQLite3Database();
-              //  $sqlite->connect();
-              
-              /*  $sqlite->insert("user", array(
-                    "user_name"=> "user" .rand(0, 100),
-                     "password"=>"125445li",
-                     "state"=>1
-                    ));*/
-                        
-               // print_r($sqlite->get_rows("select * from user" , true));   
+            
                 
  
-                //$values = $conn->GetformatQuery("select * from datos" );
-                //$values = $conn->RawQuery("select * from datos" , PDO::FETCH_ASSOC);
-                //$values = $conn->Query("select * from datos" );
-               /* echo "<pre>";
-                print_r($values);
-                echo "</pre>";
-                
-                $find = $conn->Find("datos", "Id = 8" , array("Nombre" => "name" , "valor"=>"value"));
-              
-                
-                echo"<br><br><br><pre>";
-                print_r($find);
-                echo"</pre>";*/
+            
+               
                 
               /*  $traductor = new SivarApi\Tools\Translate\GoogleTranslate("en", "es");
                 $traduccion = $traductor->translate("HELLO WORLD");

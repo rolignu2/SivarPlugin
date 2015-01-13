@@ -41,8 +41,9 @@ include 'Class/Directory/Class.File.php';
  * LLAMADA DE CAPTCHA
  * BaseCaptcha.php depende de Captcha.php
  */
-require 'Class/Tools/BaseCaptcha.php';
 require 'Class/Tools/Captcha.php';
+require 'Class/Tools/BaseCaptcha.php';
+
 
 
 /**
