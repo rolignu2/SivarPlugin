@@ -11,11 +11,20 @@
  * 
  * 
  */
-
+$FOLDER_ = null;
 $SERVER_DIR = getcwd();
 $ARRAY_DIR = explode("\\", $SERVER_DIR);
 $DIR_NAME = $ARRAY_DIR[count($ARRAY_DIR)-1];
 
+/**
+ * verifica si la cookie FOLDER existe en dado caso
+ * no exita eliminar dicha condicion o dejarla (No importa ), agregando el folder 
+ * inicial manualmente  $FOLDER_ = "SivarPlugin";
+ */
+if(isset($_COOKIE['FOLDER']))
+    $FOLDER_ = $_COOKIE['FOLDER'];
+else
+    $FOLDER_ = "SivarPlugin";
 
 $CONFIG_ = array(
     
@@ -35,15 +44,15 @@ $CONFIG_ = array(
     ],
     
     "DB_SQLITE" => [
-        "dir"=> "$SERVER_DIR/Class/Database/sqlitedb/example.db"
+        "dir"=> "$SERVER_DIR/Class/Database/sqlitedb/example.db"//direccion donde se encuentra la bdd 
     ],
     
     
     "DB_ORACLE" => [
-        "host"=>"localhost",
-        "user"=>"",
-        "password"=>"",
-        "database"=>""
+        "host"=>"localhost",//host
+        "user"=>"",//user
+        "password"=>"",//password
+        "database"=>""//database name
     ],
     
     "DIR" =>[
@@ -51,7 +60,9 @@ $CONFIG_ = array(
         "directory"=> $DIR_NAME,
         "server" => $_SERVER["SERVER_NAME"],
         "user_agent"=> $_SERVER["HTTP_USER_AGENT"]
-    ]
+    ],
+    
+    "APP_FOLDER" => $FOLDER_
      
 )
 

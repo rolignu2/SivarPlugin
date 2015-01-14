@@ -17,15 +17,16 @@ include 'Config.php';
 
 $GLOBAL_ROOT = $CONFIG_["DIR"]["root"];
 $GLOBAL_DIRECTORY = $CONFIG_["DIR"]["directory"];
+$FOLDER = $CONFIG_["APP_FOLDER"];
 
 
 /**
  * LLAMADA DE LAS BASES DE DATOS 
  * NO DEPENDE LA UNA DE LA OTRA
  */
-include 'Class/Database/Class.Mysql.php';
-include 'Class/Database/Class.Sqlite.php';
-include 'Class/Database/Class.Oci8.php';
+include $GLOBAL_ROOT . $FOLDER . '/Content/Class/Database/Class.Mysql.php';
+include $GLOBAL_ROOT . $FOLDER . '/Content/Class/Database/Class.Sqlite.php';
+include $GLOBAL_ROOT . $FOLDER . '/Content/Class/Database/Class.Oci8.php';
 
 
 /**
@@ -33,25 +34,32 @@ include 'Class/Database/Class.Oci8.php';
  * directory.php no depende de otra clase
  * file.php depende de directory
  */
-include 'Class/Directory/Class.Directory.php';
-include 'Class/Directory/Class.File.php';
+include $GLOBAL_ROOT . $FOLDER . '/Content/Class/Directory/Class.Directory.php';
+include $GLOBAL_ROOT . $FOLDER . '/Content/Class/Directory/Class.File.php';
 
 
 /**
  * LLAMADA DE CAPTCHA
  * BaseCaptcha.php depende de Captcha.php
  */
-require 'Class/Tools/Captcha.php';
-require 'Class/Tools/BaseCaptcha.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/Captcha.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/BaseCaptcha.php';
 
+
+
+/**
+ * Google 
+ */
+
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Google/GoogleTranslate.php';
 
 
 /**
  * LLAMADA DE PAGINACION
  * basepaginacion.php depende de paginacion.php
  */
-require 'Class/Pagination/Class.Paginacion.php';
-require 'Class/Pagination/Class.BasePaginacion.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Pagination/Class.Paginacion.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Pagination/Class.BasePaginacion.php';
 
 
 /**
@@ -59,28 +67,27 @@ require 'Class/Pagination/Class.BasePaginacion.php';
  * CADA CLASE ES INDEPENDIENTE DE LA OTRA
  */
 
-require 'Class/Tools/Encriptacion.php';
-require 'Class/Tools/Validation.php';
-require 'Class/Tools/GoogleTranslate.php';
-require 'Class/Tools/CurlAccess.php';
-require 'Class/Tools/JsonClass.php';
-require 'Class/Tools/JSON.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/Encriptacion.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/Validation.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/CurlAccess.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/JsonClass.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/JSON.php';
 
 /**
  * LLAMADA DE LAS CLASES EN EL DIRECTORIO VIEW 
  * 
  */
 
-require 'Class/View/ViewLoader.php';
-require 'Class/View/ImageRender.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/View/ViewLoader.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/View/ImageRender.php';
 
 
 /* CLASE PHP MAIL , HEREDA CLASES EXTERNAS DENTRO DEL DIRECTORIO Mail**/
 
-require 'Class/Mail/PHPMailerAutoload.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Mail/PHPMailerAutoload.php';
 
 /*LLAMADA DE LA CLASE HEADER **/
-require 'Class/Http/Class.Header.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Http/Class.Header.php';
 
 
 /** API PDF */
@@ -92,16 +99,16 @@ require 'Class/Http/Class.Header.php';
 
 //require 'Class/Pdf/Class-PdfToImage.php';
 
-require 'Class/Pdf/Class-Fpdf.php';
-require 'Class/Pdf/exportPDF.class.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Pdf/Class-Fpdf.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Pdf/exportPDF.class.php';
 
 
 /**
  * E-COMMERCE CLASS 
  */
 
-//require 'Class/Ecommerce/GoPaypal.class.php';
-require 'Class/Ecommerce/ccvalidator.class.php';
+//require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Ecommerce/GoPaypal.class.php';
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Ecommerce/ccvalidator.class.php';
 
 
 

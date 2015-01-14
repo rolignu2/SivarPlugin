@@ -54,11 +54,16 @@
      $ARRAY_DIR = explode("\\", $SERVER_DIR);
      $DIR_NAME = $ARRAY_DIR[count($ARRAY_DIR)-1];
      
+     //Agrega el directorio inicial del proyecto 
+     //si se borra la cookie favor agregar el folder de forma manual en Conf/Config.php
+     setcookie("FOLDER" , $DIR_NAME);
+    
      //OPCIONAL
      header("Cache-Control: no-cache");
      //OPCIONAL
      header("Pragma: no-cache");
-     
+    
+ 
      //NOMBRE DEL ARCHIVO EN LA CUAL INICIARA , GENERALMENTE ES UN INDEX.PHP    
      header("Location: /$DIR_NAME/Content/index.php" );  
 

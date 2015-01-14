@@ -1,4 +1,4 @@
-<?php namespace SivarApi\Tools\Translate;
+<?php 
 
 /**
  * Google Translate PHP class
