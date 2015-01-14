@@ -7,31 +7,19 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/base_calendar_style.css" />
         <title></title>
     </head>
     <body>
+        
         <?php
             include   '../Conf/Include.php';
             
+            $calendar = new SivarApi\Tools\Calendar();
+            
+            print $calendar->output_calendar(2015, 01 , 'calendar');
 
 
-//check for errors
-/*if(!$spell_result)
-{
-	if(!$err = $gs->getError())
-	{
-		echo "<br>No spelling suggestions necessary.<br>";
-	}
-	else
-	{
-		echo "<br>Error: " . $err;
-	}
-}
-else
-{
-	echo "<br>Suggested Spelling: " . $spell_result;
-}
-        */    
         ?>
     </body>
 </html>

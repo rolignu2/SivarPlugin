@@ -14,13 +14,16 @@ and open the template in the editor.
 
                 include  '/Conf/Include.php';
                 
+                $url = "Web/index.php";
+                $header = new \Http\Header();
+                $header->redirect($url);
+                
+                
                 /*$jason = new \SivarApi\Tools\Services_JSON();
                 $arr = array("nombre"=>"roli");
                 echo $jason->encode($arr);*/
                 
-                $url = "Web/index.php";
-                $header = new \Http\Header();
-                $header->redirect($url);
+                
                
                
               /*  $public = "6LcHKeMSAAAAAOT44ko9ABNagbFST3RAMrinllIg";

@@ -52,7 +52,7 @@ require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/BaseCaptcha.php';
  */
 
 require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Google/GoogleTranslate.php';
-
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Google/GoogleAnalyticsAPI.class.php';
 
 /**
  * LLAMADA DE PAGINACION
@@ -72,7 +72,7 @@ require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/Validation.php';
 require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/CurlAccess.php';
 require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/JsonClass.php';
 require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/JSON.php';
-
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Tools/Calendar.php';
 /**
  * LLAMADA DE LAS CLASES EN EL DIRECTORIO VIEW 
  * 
@@ -88,7 +88,7 @@ require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Mail/PHPMailerAutoload.php';
 
 /*LLAMADA DE LA CLASE HEADER **/
 require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Http/Class.Header.php';
-
+require $GLOBAL_ROOT . $FOLDER . '/Content/Class/Http/Class.HttpClient.php';
 
 /** API PDF */
 

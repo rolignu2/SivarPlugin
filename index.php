@@ -65,7 +65,7 @@
     
  
      //NOMBRE DEL ARCHIVO EN LA CUAL INICIARA , GENERALMENTE ES UN INDEX.PHP    
-     header("Location: /$DIR_NAME/Content/index.php" );  
+     header("Location: /$DIR_NAME/Content/Web/index.php" );  
 
      
      
