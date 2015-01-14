@@ -1,6 +1,6 @@
 # SIVAR-PLUGIN 
  
-<?php
+
     /**
      * 
      * @name SIVAR PLUGIN 
@@ -63,7 +63,7 @@
      header("Location: /$DIR_NAME/Content/Web/index.php" );  
      
      
-?>
+
 
 
 
